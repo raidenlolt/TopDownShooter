@@ -8,6 +8,8 @@ namespace VM.TopDown.WeaponSystem
     [RequireComponent(typeof(Rigidbody2D))]
     public class WeaponShootingSystem : MonoBehaviour
     {
+        public System.Action<Weapon> ShotFired;
+
         [SerializeField] Transform firePoint;
 
         Rigidbody2D rb;
@@ -70,6 +72,8 @@ namespace VM.TopDown.WeaponSystem
                 Rigidbody2D brb = bullet.GetComponent<Rigidbody2D>();
                 brb.AddForce(firePoint.up * currentWeapon.bulletForce, ForceMode2D.Impulse);
                 rb.AddForce(firePoint.up * -1 * currentWeapon.recoilForce);
+
+                ShotFired?.Invoke(currentWeapon);
             }
         }
     }

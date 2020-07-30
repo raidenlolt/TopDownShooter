@@ -20,7 +20,7 @@ MonoBehaviour:
   magazineCapacity: 0
   reloadSpeed: 0
   fireRate: 2
-  recoilForce: 50
+  recoilForce: 40
   bulletForce: 20
-  damageValue: 0
+  damageValue: 2
   damageType: {fileID: 11400000, guid: 84557490a3042104fb6387d9871dd2ff, type: 2}

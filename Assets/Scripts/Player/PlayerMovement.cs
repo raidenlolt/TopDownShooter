@@ -12,10 +12,17 @@ namespace VM.TopDown.Player
 	
 	    private Rigidbody2D rb;
 	    private Vector2 movement;
-	
-	    private void Start()
+
+		bool freezePlayer;
+
+        private void Awake()
+        {
+			rb = GetComponent<Rigidbody2D>();
+		}
+
+        private void Start()
 	    {
-	        rb = GetComponent<Rigidbody2D>();
+			freezePlayer = false;
 	    }
 	
 	    private void Update()
@@ -26,7 +33,19 @@ namespace VM.TopDown.Player
 	
 	    private void FixedUpdate()
 	    {
+			if (freezePlayer) return;
+
 	        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 	    }
+
+		public void FreezePlayer()
+        {
+			freezePlayer = true;
+        }
+
+		public void UnfreezePlayer()
+        {
+			freezePlayer = false;
+        }
 	}
 }
