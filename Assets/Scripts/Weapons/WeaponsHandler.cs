@@ -7,8 +7,13 @@ namespace VM.TopDown.WeaponSystem
     [RequireComponent(typeof(WeaponShootingSystem))]
 	public class WeaponsHandler : MonoBehaviour
 	{
+        public System.Action<Weapon> SwitchingWeapon;
+
 		[SerializeField] Weapon[] weapons;
         WeaponShootingSystem shootingSystem;
+
+        public int TotalWeaponsCount { get { return weapons.Length; } }
+        //public Weapon CurrentWeapon { get { return shootingSystem.GetCurrentWeapon(); } }
 
         private void Awake()
         {
@@ -22,8 +27,6 @@ namespace VM.TopDown.WeaponSystem
                 Debug.LogError("[WeaponsHandler] No weapons added to WeaponsHandler script.");
                 return;
             }
-
-            shootingSystem.SetCurrentWeapon(weapons[0]);
         }
 
         public void SwitchWeapon(int index)
@@ -31,6 +34,7 @@ namespace VM.TopDown.WeaponSystem
             if(index < weapons.Length)
             {
                 shootingSystem.SetCurrentWeapon(weapons[index]);
+                SwitchingWeapon?.Invoke(weapons[index]);
             }
             else
             {

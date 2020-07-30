@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92b560d582181f74fb25ea2e5edc9073, type: 3}
-  m_Name: PistolDamage
+  m_Name: Rocket
   m_EditorClassIdentifier: 
-  type: 0
-  radius: 0
+  type: 1
+  value: 0
+  isPersistant: 0
+  radius: 1.5
   lifetime: 0
-  HitEffect: {fileID: 0}
+  hasHitEffect: 1
+  HitEffect: {fileID: 88399578121612688, guid: 8022e72fbff51114084bb3aaa64e9456, type: 3}

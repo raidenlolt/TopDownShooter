@@ -18,10 +18,10 @@ namespace VM.TopDown.Damage
         private void OnCollisionEnter2D(Collision2D collision)
         {
             var damageComp = collision.gameObject.GetComponent<DamageComponent>();
-            if (damageComp != null && damageComp.Value > 0f)
+            if (damageComp != null && damageComp.GetDamageValue() > 0f)
             {
-                health.Value -= damageComp.Value;
-                damageTaken?.Invoke(damageComp.Value);
+                health.Value -= damageComp.GetDamageValue();
+                damageTaken?.Invoke(damageComp.GetDamageValue());
             }
         }
     }

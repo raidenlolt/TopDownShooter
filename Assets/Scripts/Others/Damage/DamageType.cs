@@ -9,15 +9,17 @@ namespace VM.TopDown.Damage
     {
         Point,
         Radial,
-        Persistant,
     }
 
     [CreateAssetMenu(fileName ="New Damage Type", menuName = "WeaponSystem/DamageType")]
     public class DamageType : ScriptableObject
     {
         public DamageTypes type;
+        public float value;
+        public bool isPersistant;
         [ConditionalField(nameof(type), false, DamageTypes.Radial)] public float radius;
-        [ConditionalField(nameof(type), false, DamageTypes.Persistant)] public float lifetime;
-        public GameObject HitEffect;
+        [ConditionalField(nameof(isPersistant))] public float lifetime;
+        public bool hasHitEffect;
+        [ConditionalField(nameof(hasHitEffect))] public GameObject HitEffect;
     }
 }

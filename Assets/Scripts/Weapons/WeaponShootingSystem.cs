@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VM.TopDown.Damage;
 
 namespace VM.TopDown.WeaponSystem
 {
@@ -43,6 +44,10 @@ namespace VM.TopDown.WeaponSystem
             timeSinceLastShot += Time.deltaTime;
         }
 
+        public Weapon GetCurrentWeapon()
+        {
+            return currentWeapon;
+        }
         public void SetCurrentWeapon(Weapon weapon)
         {
             currentWeapon = weapon;
@@ -59,7 +64,9 @@ namespace VM.TopDown.WeaponSystem
 
                 timeSinceLastShot = 0;
                 var bullet = Instantiate(currentWeapon.bulletPrefab, firePoint.position, firePoint.rotation);
-                bullet.GetComponent<DamageComponent>().Value = currentWeapon.damage;
+                var bdc = bullet.GetComponent<DamageComponent>();
+                bdc.Setup(currentWeapon.damageType, currentWeapon.damageValue);
+
                 Rigidbody2D brb = bullet.GetComponent<Rigidbody2D>();
                 brb.AddForce(firePoint.up * currentWeapon.bulletForce, ForceMode2D.Impulse);
                 rb.AddForce(firePoint.up * -1 * currentWeapon.recoilForce);

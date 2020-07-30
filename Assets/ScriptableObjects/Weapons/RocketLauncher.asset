@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20aa75d504b45dd41a99c7e54e9d0a59, type: 3}
-  m_Name: MachineGun
+  m_Name: RocketLauncher
   m_EditorClassIdentifier: 
-  Name: Machine Gun
+  Name: 
   Description: 
-  bulletPrefab: {fileID: 4716896110368598965, guid: fa2415edacda82f4a9cbc9b80a6c4811,
+  bulletPrefab: {fileID: 8604863583064607593, guid: 8a62b7eaf88771040b80631d7d5607cc,
     type: 3}
-  uiImage: {fileID: 21300000, guid: 2984e823ba585f246bbe0b73a290c68a, type: 3}
-  magazineCapacity: 0
-  reloadSpeed: 0
-  fireRate: 5
-  recoilForce: 100
-  bulletForce: 20
-  damageValue: 0
-  damageType: {fileID: 11400000, guid: 84557490a3042104fb6387d9871dd2ff, type: 2}
+  uiImage: {fileID: 21300000, guid: 3a4ac1c82e2e0f344bda80bfd2e7e69f, type: 3}
+  magazineCapacity: 1
+  reloadSpeed: 0.5
+  fireRate: 1
+  recoilForce: 500
+  bulletForce: 10
+  damageValue: 10
+  damageType: {fileID: 11400000, guid: 02d5aa79601721341804eb2d1799d4fe, type: 2}

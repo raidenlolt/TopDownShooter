@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.h8man.2d.navmeshplus": "https://github.com/h8man/NavMeshPlus.git#master",
     "com.mybox": "https://github.com/Deadcows/MyBox.git",
     "com.unity.2d.animation": "3.2.2",
     "com.unity.2d.pixel-perfect": "2.0.4",
@@ -50,6 +51,10 @@
     "com.mybox": {
       "revision": "HEAD",
       "hash": "648522af32252f16c46f6f88ab322e86775ec55b"
+    },
+    "com.h8man.2d.navmeshplus": {
+      "revision": "master",
+      "hash": "0d92132ef406a7b3b2eeb24d65449219421daaf3"
     }
   }
 }
